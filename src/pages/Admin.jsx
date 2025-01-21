@@ -7,7 +7,7 @@ const Admin = () => {
     useEffect(() => {
         const fetchUserProfile = async () => {
             try {
-                const response = await fetch('/admin-data', { credentials: 'include' });
+                const response = await fetch('/server/admin-data', { credentials: 'include' });
                 if (!response.ok) {
                     throw new Error("Failed to fetch user profile.");
                 }
