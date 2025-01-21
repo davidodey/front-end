@@ -1,8 +1,9 @@
 import React from "react";
 
 function Login() {
+
     const handleLinkedInLogin = () => {
-        window.location.href = 'http://localhost:5173/server/auth/linkedin';
+        window.location.href = 'https://dolphin-app-ufusi.ondigitalocean.app/server/auth/linkedin';
     };
 
     return (
