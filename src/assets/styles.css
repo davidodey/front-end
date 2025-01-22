@@ -162,7 +162,66 @@ li {
     margin: 0 auto; /* Center content horizontally */
     padding: 0 1.5rem; /* Maintain padding inside the container */
 }
+/* General container styling */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--background-color);
+    padding: 1.5rem;
+}
 
+.login-card {
+    background-color: var(--section-background);
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.login-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--header-color);
+    margin-bottom: 1rem;
+}
+
+.login-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--link-color);
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-button:hover {
+    background-color: var(--link-hover-color);
+    transform: scale(1.05);
+}
+
+.login-button:active {
+    transform: scale(1);
+}
+
+.login-button svg {
+    margin-right:10px;
+}
 @media (min-width: 768px) {
     .app {
         display: grid;
