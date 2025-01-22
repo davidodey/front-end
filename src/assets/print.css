@@ -1,0 +1,361 @@
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    padding: 0 1.5rem;
+    font-size: 18px;
+}
+
+header {
+    text-align: left;
+    padding: 3.5rem 1.5rem; /* More spacious padding */
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+    font-size: 3.8rem; /* Slightly increased size */
+    font-weight: 800; /* Bold for impact */
+    margin-bottom: 0.5rem; /* Slight spacing adjustment */
+    color: var(--header-color);
+    line-height: 1.1; /* Tighter line height for name */
+}
+
+header .job-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.job-title, .school-info {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem; /* Adjust spacing for balance */
+    padding-left:0
+}
+
+.contact-info li {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+}
+
+ a {
+    margin-left: 0.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--link-hover-color);
+}
+
+aside {
+    background-color: var(--section-background);
+}
+section {
+
+    padding: 1.8rem;
+    border-radius: 0.8rem;
+    /*background-color: var(--section-background);*/
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Subtle, less intense shadow */
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700; /* Bold section titles for emphasis */
+    color: var(--header-color);
+    line-height: 1.3;
+}
+
+section p, section ul {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+.job-position {
+    margin-bottom: 1.5rem;
+}
+
+.job-title h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.company-icon {
+    margin-left:12px;
+}
+.company-icon h3 {
+    margin-bottom:0;
+}
+.company {
+    font-size: 1rem;
+    color: var(--muted-color);
+    margin-bottom:20px;
+}
+.company-name{
+
+}
+.flex {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.references {
+    margin-top: 2rem;
+    padding: 1.8rem;
+    border-radius: 0.8rem;
+    /*background-color: var(--section-background);*/
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.references h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    color: var(--header-color);
+    font-weight: 700;
+}
+
+.reference {
+    margin-bottom: 1.2rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.8rem;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.reference-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.reference-info {
+    font-size: 1.1rem;
+    color: var(--muted-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.reference-info a, .achievement a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    margin-left:0;
+}
+
+.reference-info a:hover {
+    color: var(--link-hover-color);
+}
+
+.app {
+    max-width: 1440px; /* Cap maximum width */
+    margin: 0 auto; /* Center content horizontally */
+    padding: 0 1.5rem; /* Maintain padding inside the container */
+}
+/* General container styling */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--background-color);
+    padding: 1.5rem;
+}
+.location {
+    margin-left:8px;
+}
+.school {
+    margin-bottom:24px;
+}
+.school h3 {
+    color: var(--accent-color)
+}
+
+.login-card {
+    background-color: var(--section-background);
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+.login-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--header-color);
+    margin-bottom: 1rem;
+}
+.summary {
+    padding-top:0;
+}
+.login-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--link-color);
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.achievement {
+    margin-bottom:20px;
+}
+.login-button:hover {
+    background-color: var(--link-hover-color);
+    transform: scale(1.05);
+}
+
+.login-button:active {
+    transform: scale(1);
+}
+
+.login-button svg {
+    margin-right:10px;
+    margin-right:10px;
+}
+@media (min-width: 768px) {
+    .app {
+        display: grid;
+        /* Set columns to 2fr for the main content and 1fr for the sidebar */
+        grid-template-columns: 2fr 1fr;
+        gap: 1.8rem;
+
+        /* Define named grid areas for easy readability */
+        grid-template-areas:
+            "header aside"
+            "main   aside";
+    }
+
+    header {
+        grid-area: header;
+        padding: 4rem 2rem;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    aside {
+        grid-area: aside;
+        padding-top:50px;
+    }
+    .strength-type {
+        margin-bottom:20px;
+    }
+    .reference {
+        margin-bottom:2rem;
+    }
+}
+
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --header-color: #111111;
+    --accent-color: #555555;
+    --link-color: #0077cc;
+    --link-hover-color: #005fa3;
+    --border-color: #eaeaea;
+    --section-background: #f9f9f9;
+    --muted-color: #888888;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1e1e1e;
+        --text-color: #e0e0e0;
+        --header-color: #ffffff;
+        --accent-color: #bbbbbb;
+        --link-color: #66ccff;
+        --link-hover-color: #449ecf;
+        --border-color: #333333;
+        --section-background: #252525;
+        --muted-color: #aaaaaa;
+    }
+}
+
+.contact-icon {
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-icon svg {
+fill: red !important;
+}
+.sr-only {
+    position: absolute; /* Remove from flow */
+    width: 1px;         /* Minimal visual “footprint” */
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;   /* Hide any overflowing content */
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(100%);
+    border: 0;
+    white-space: nowrap; /* Prevent line break for screen readers */
+}
+
+/* Optional Focusable Variant
+   If you want the element to become visible when tabbed/focused,
+   you can use a .focusable class that overrides the above for focus states. */
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+}
