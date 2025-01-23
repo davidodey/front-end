@@ -2,7 +2,12 @@ import React from "react";
 
 function Login() {
     const handleLinkedInLogin = () => {
-        window.location.href = 'https://dolphin-app-ufusi.ondigitalocean.app/server/auth/linkedin';
+        if (import.meta.env.VITE_NODE_ENV === 'local') {
+            window.location.href = 'http://localhost:5173/server/auth/linkedin';
+
+        } else {
+            window.location.href = 'https://dolphin-app-ufusi.ondigitalocean.app/server/auth/linkedin';
+        }
     };
 
     return (

@@ -10,12 +10,11 @@ import ProtectedRoute from "./protectedRoute";
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
-    const [user, setUser] = useState(null);
+
     useEffect(() => {
         const checkAuth = async () => {
             try {
                 const response = await fetch('/server/admin-data', { credentials: 'include' });
-                setUser(await response.json().user?.userInfo);
                 if (response.ok) {
                     setIsAuthenticated(true);
                 } else {
@@ -28,6 +27,7 @@ function App() {
                 setIsLoading(false);
             }
         };
+
         checkAuth();
     }, []);
 
@@ -38,7 +38,7 @@ function App() {
             <Route
                 path="/admin"
                 element={
-                    <ProtectedRoute isAuthenticated={isAuthenticated} isLoading={isLoading} user={user}>)
+                    <ProtectedRoute isAuthenticated={isAuthenticated} isLoading={isLoading}>
                         <Admin />
                     </ProtectedRoute>
                 }
