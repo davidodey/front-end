@@ -176,3 +176,91 @@ export function OReillyLogo({ width = 300, height = 300, ...props }) {
         </svg>
     );
 }
+
+export const IconContact = ({ width = 20, height = 20, ...props }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" {...props}>
+        <path
+            d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        />
+        <path
+            d="M20.0004 21.0004C19.1671 18.6138 16.8388 17 14.0004 17H10.0004C7.16201 17 4.83369 18.6138 4.00037 21.0004"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        />
+    </svg>
+);
+
+export const IconSummary = ({ width = 20, height = 20, ...props }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" {...props}>
+        <path
+            d="M8 6H21M8 12H21M8 18H21M3 6H4M3 12H4M3 18H4"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        />
+    </svg>
+);
+
+export const IconExperience = ({ width = 20, height = 20, ...props }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" {...props}>
+        <path
+            d="M4 7H20V17H4V7Z"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        />
+        <path
+            d="M16 3H8V7H16V3Z"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        />
+    </svg>
+);
+
+export const IconEducation = ({ width = 20, height = 20, ...props }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" {...props}>
+        <path
+            d="M10.5 12L3 8L12 3L21 8L13.5 12M3 8V16C3 16 8.18182 20.5 12 20.5C15.8182 20.5 21 16 21 16V8M13.5 12V19"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        />
+    </svg>
+);
+
+export const IconAchievements = ({ width = 20, height = 20, ...props }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" {...props}>
+        <path
+            d="M12 15V3M8 5H16"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        />
+        <path
+            d="M17 8H15C15 8 14.5304 10.3951 12 10C9.46961 9.60495 9 12 9 12H7C7 12 6.53043 14.3951 4 14C1.46957 13.6049 2 16 2 16V19C2 19 7 21 12 21C17 21 22 19 22 19V16C22 16 22.5304 13.6049 20 14C17.4696 14.3951 17 12 17 12Z"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        />
+    </svg>
+);
+
+export const IconSkills = ({ width = 20, height = 20, ...props }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" {...props}>
+        <path
+            d="M12 5.5C15.5899 5.5 18.5 8.41015 18.5 12C18.5 15.5899 15.5899 18.5 12 18.5M12 5.5C8.41015 5.5 5.5 8.41015 5.5 12C5.5 15.5899 8.41015 18.5 12 18.5M12 5.5V3M12 21V18.5M5.5 12H3M21 12H18.5"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        />
+    </svg>
+);
+
+export const IconStrengths = ({ width = 20, height = 20, ...props }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" {...props}>
+        <path
+            d="M7 21L9 13L2 8.5L10 8L12 2L14 8L22 8.5L15 13L17 21L12 17.5L7 21Z"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        />
+    </svg>
+);
+
+export const IconReferences = ({ width = 20, height = 20, ...props }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" {...props}>
+        <path
+            d="M2 21V3H16V21L9 18.5L2 21Z"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        />
+        <path
+            d="M18 9H22M18 5H22M18 13H22M12 7H6M12 11H6M10 15H6"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        />
+    </svg>
+);

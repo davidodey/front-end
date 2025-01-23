@@ -1,12 +1,12 @@
 import React from "react";
 import {EmailIcon, GithubIcon, LocationIcon, PhoneIcon} from "./Icons.jsx";
-
+import { useDispatch, useSelector } from "react-redux";
 function Header () {
+    const { profile, status, error } = useSelector((state) => state.user);
     return (
         <header>
-            <h1>David O'Dey</h1>
-            <p className="job-title">UI Engineer | Building Scalable, User-Focused Solutions in Web, Mobile, and
-                Enterprise Platforms</p>
+            <h1>{profile?.name}</h1>
+            <p className="job-title">{profile?.jobTitle}</p>
 
             <ul className="contact-info" aria-label="Contact Information">
                 <li>
@@ -14,7 +14,7 @@ function Header () {
                     <span className="contact-icon">
               <PhoneIcon/>
               <a href="tel:4804939525" className="phone">
-                480-493-9525
+                {profile?.phone}
               </a>
             </span>
                 </li>
@@ -24,7 +24,7 @@ function Header () {
                     <span className="contact-icon">
               <EmailIcon/>
               <a href="mailto:davodey@gmail.com" className="email">
-                davodey@gmail.com
+                   {profile?.email}
               </a>
             </span>
                 </li>
@@ -39,7 +39,7 @@ function Header () {
                   target="_blank"
                   rel="noopener noreferrer"
               >
-                github.com/davodey
+                    {profile?.github}
               </a>
             </span>
                 </li>
@@ -48,7 +48,7 @@ function Header () {
                     <span className="sr-only">Location:</span>
                     <span className="contact-icon">
               <LocationIcon size={25}/>
-              <span className="location">Phoenix, AZ</span>
+              <span className="location">    {profile?.location}</span>
             </span>
                 </li>
             </ul>

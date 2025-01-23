@@ -1,4 +1,39 @@
-body, h1, h2, h3, p, ul, li, a {
+/* Reuse the same styles you posted */
+
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --header-color: #111111;
+    --accent-color: #555555;
+    --link-color: #0077cc;
+    --link-hover-color: #005fa3;
+    --border-color: #eaeaea;
+    --section-background: #f9f9f9;
+    --muted-color: #888888;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1e1e1e;
+        --text-color: #e0e0e0;
+        --header-color: #ffffff;
+        --accent-color: #bbbbbb;
+        --link-color: #66ccff;
+        --link-hover-color: #449ecf;
+        --border-color: #333333;
+        --section-background: #252525;
+        --muted-color: #aaaaaa;
+    }
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+a {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -75,7 +110,8 @@ section h2 {
     line-height: 1.3;
 }
 
-section p, section ul {
+section p,
+section ul {
     font-size: 1.1rem;
     line-height: 1.6;
 }
@@ -162,6 +198,7 @@ li {
     margin: 0 auto; /* Center content horizontally */
     padding: 0 1.5rem; /* Maintain padding inside the container */
 }
+
 /* General container styling */
 .login-container {
     display: flex;
@@ -196,7 +233,7 @@ li {
 }
 
 .login-button {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     background-color: var(--link-color);
@@ -220,8 +257,9 @@ li {
 }
 
 .login-button svg {
-    margin-right:10px;
+    margin-right: 10px;
 }
+
 @media (min-width: 768px) {
     .app {
         display: grid;
@@ -240,31 +278,5 @@ li {
 
     header .job-title {
         font-size: 1.7rem;
-    }
-}
-
-:root {
-    --background-color: #ffffff;
-    --text-color: #333333;
-    --header-color: #111111;
-    --accent-color: #555555;
-    --link-color: #0077cc;
-    --link-hover-color: #005fa3;
-    --border-color: #eaeaea;
-    --section-background: #f9f9f9;
-    --muted-color: #888888;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-color: #1e1e1e;
-        --text-color: #e0e0e0;
-        --header-color: #ffffff;
-        --accent-color: #bbbbbb;
-        --link-color: #66ccff;
-        --link-hover-color: #449ecf;
-        --border-color: #333333;
-        --section-background: #252525;
-        --muted-color: #aaaaaa;
     }
 }
