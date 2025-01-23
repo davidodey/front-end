@@ -20,6 +20,7 @@ function App() {
                 } else {
                     setIsAuthenticated(false);
                 }
+                console.log('23', await response.json())
             } catch (err) {
                 console.error("Error checking authentication:", err);
                 setIsAuthenticated(false);

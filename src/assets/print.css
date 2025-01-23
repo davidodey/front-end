@@ -74,7 +74,6 @@ section {
     padding: 1.8rem;
     border-radius: 0.8rem;
     /*background-color: var(--section-background);*/
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Subtle, less intense shadow */
 }
 
 section h2 {
@@ -130,11 +129,11 @@ li {
     justify-content: center;
 }
 .references {
-    margin-top: 2rem;
+
     padding: 1.8rem;
     border-radius: 0.8rem;
     /*background-color: var(--section-background);*/
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .references h2 {
@@ -146,10 +145,7 @@ li {
 
 .reference {
     margin-bottom: 1.2rem;
-    padding: 1.5rem;
-    border: 1px solid var(--border-color);
     border-radius: 0.8rem;
-    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -358,4 +354,116 @@ fill: red !important;
     clip: auto;
     clip-path: none;
     white-space: normal;
+}
+
+
+@media print {
+    body {
+        padding: 0 12px; /* Max padding set to 12px */
+        font-size: 18px;
+        background-color: #ffffff;
+        color: #000000;
+        padding-right:0;
+    }
+    .app {
+        max-width: 100%; /* Cap maximum width */
+        margin: 0 auto; /* Center content horizontally */
+        padding: 0 2rem; /* Maintain padding inside the container */
+        padding-right:0;
+        margin-right:0;
+        padding-top:0;
+    }
+    main {
+
+    }
+    header {
+        padding: 12px; /* Reduced to max padding of 12px */
+        padding-top:100px;
+    }
+    aside {
+        padding:20px;
+        padding-top:100px;
+    }
+    header h1 {
+        font-size: 61px;
+        margin-bottom: 8px;
+    }
+
+    header .job-title {
+        font-size: 24px;
+        margin-bottom: 12px; /* Reduced to max padding of 12px */
+    }
+
+    .contact-info {
+        gap: 12px; /* Reduced to max padding of 12px */
+        flex-wrap: wrap;
+        margin-top:20px;
+    }
+
+    .contact-info li {
+        font-size: 21px;
+    }
+
+    a {
+        margin-left: 8px;
+    }
+
+    section {
+        padding: 12px; /* Reduced to max padding of 12px */
+        border-radius: 12px; /* Reduced to max padding of 12px */
+    }
+
+    section h2 {
+        font-size: 32px;
+        margin-bottom: 12px; /* Reduced to max padding of 12px */
+    }
+
+    section p,
+    section ul {
+        font-size: 18px;
+    }
+
+    ul {
+        padding-left: 12px; /* Reduced to max padding of 12px */
+        margin-top: 8px;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+
+    .job-position {
+        margin-bottom: 12px; /* Reduced to max padding of 12px */
+    }
+
+    .job-title h3 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+    .achievement {
+
+    }
+    .references {
+        padding: 12px; /* Reduced to max padding of 12px */
+        border-radius: 12px; /* Reduced to max padding of 12px */
+
+    }
+
+    .references h2 {
+        font-size: 32px;
+        margin-bottom: 12px; /* Reduced to max padding of 12px */
+    }
+
+    .reference {
+        margin-bottom: 12px; /* Reduced to max padding of 12px */
+        border-radius: 12px; /* Reduced to max padding of 12px */
+    }
+
+    .reference-name {
+        font-size: 21px;
+    }
+
+    .reference-info {
+        font-size: 18px;
+    }
 }

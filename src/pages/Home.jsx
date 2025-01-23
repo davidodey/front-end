@@ -1,67 +1,15 @@
 // Home.jsx
 import React from "react";
 import {
-    PhoneIcon,
-    EmailIcon,
-    GithubIcon,
-    LocationIcon,
     PearsonLogo,
     OReillyLogo,
 } from "../components/Icons.jsx";
+import Header from "../components/Header.jsx";
 
 function Home() {
     return (
         <div className="app">
-            <header>
-                <h1>David O'Dey</h1>
-                <p className="job-title">UI Engineer | Building Scalable, User-Focused Solutions in Web, Mobile, and Enterprise Platforms</p>
-
-                <ul className="contact-info" aria-label="Contact Information">
-                    <li>
-                        <span className="sr-only">Phone:</span>
-                        <span className="contact-icon">
-              <PhoneIcon />
-              <a href="tel:4804939525" className="phone">
-                480-493-9525
-              </a>
-            </span>
-                    </li>
-
-                    <li>
-                        <span className="sr-only">Email:</span>
-                        <span className="contact-icon">
-              <EmailIcon />
-              <a href="mailto:davodey@gmail.com" className="email">
-                davodey@gmail.com
-              </a>
-            </span>
-                    </li>
-
-                    <li>
-                        <span className="sr-only">GitHub:</span>
-                        <span className="contact-icon">
-              <GithubIcon />
-              <a
-                  href="https://github.com/davodey"
-                  className="github"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                github.io/davodey
-              </a>
-            </span>
-                    </li>
-
-                    <li>
-                        <span className="sr-only">Location:</span>
-                        <span className="contact-icon">
-              <LocationIcon size={25} />
-              <span className="location">Phoenix, AZ</span>
-            </span>
-                    </li>
-                </ul>
-            </header>
-
+            <Header />
             <main>
                 <section className="summary">
                     <h2>Summary</h2>
@@ -113,13 +61,12 @@ function Home() {
                                     </li>
                                     <li className="accomplishment">
                                         Architected & built the Endeavor project management platform (Figma, GitLab,
-                                        Azure
+                                        Azure, Digital Ocean
                                         integrations), improving sprint planning and cross-functional collaboration.
                                     </li>
                                     <li className="accomplishment">
                                         Delivered robust front-end and back-end solutions leveraging DigitalOcean, AWS,
-                                        and
-                                        Firebase, ensuring high performance and scalability.
+                                        MongoDB, Redis, and Firebase, ensuring high performance and scalability.
                                     </li>
                                     <li className="accomplishment">
                                         Mentored developers, championed best practices, and partnered with designers,
@@ -246,7 +193,7 @@ function Home() {
                                 (ES6+), and SCSS for building performant, modular interfaces.
                             </li>
                             <li className="skill">Full-Stack & Server-Side: Hands-on experience with Node.js, Express,
-                                RESTful API design, and microservices architecture.
+                                MongoDB, Firestore, Redis, RESTful API design, and microservices architecture.
                             </li>
                             <li className="skill">Design Systems & UX/UI: Proven ability to develop reusable component
                                 libraries, applying best practices in accessibility and user experience design.
@@ -284,14 +231,14 @@ function Home() {
                         <div className="reference-name">Greg Davis - Director of Creative Technology</div>
                         <div className="reference-info">
                             <span className="reference-email">greg.davis@pearson.com</span>
-                            <span className="reference-phone">Need to enter number</span>
+                            <span className="reference-phone">720-987-1651</span>
                         </div>
                     </div>
                     <div className="reference">
                         <div className="reference-name">Steven Meyer - CPO of Parts Tech Automotive</div>
                         <div className="reference-info">
-                            <span className="reference-email">steven.meyer@usmc.gov</span>
-                            <span className="reference-phone">Need number</span>
+                            <span className="reference-email">steven.m.usmc@gmail.com</span>
+                            <span className="reference-phone">562-715-1149</span>
                         </div>
                     </div>
                 </section>
