@@ -1,5 +1,5 @@
 import React from "react";
-import {EmailIcon, GithubIcon, LocationIcon, PhoneIcon} from "./Icons.jsx";
+import {EmailIcon, GithubIcon, LocationIcon, PhoneIcon} from "../Icons.jsx";
 import { useDispatch, useSelector } from "react-redux";
 function Header () {
     const { profile, status, error } = useSelector((state) => state.user);

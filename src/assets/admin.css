@@ -2,56 +2,32 @@
  * ROOT VARIABLES
  ***********************************************************/
 :root {
-    /* Dark theme base */
-    --background-color: #1f1f1f;
-    --sidebar-bg: #242424;
-    --card-bg: #2c2c2c;
-    --card-hover-bg: #353535;
+    --background-color: #1e1e2f;
+    --sidebar-bg: #252533;
+    --card-bg: #29293d;
+    --card-hover-bg: #33334a;
 
-    --text-color: #f1f1f1;
+    --text-color: #e6e6e6;
     --header-color: #ffffff;
-    --accent-color: #bbbbbb;
+    --accent-color: #a9a9b8;
 
-    --link-color: #66ccff;
-    --link-hover-color: #449ecf;
-    --danger-color: #bb2b2b;
+    --primary-color: #4caf50;
+    --primary-hover: #66bb6a;
+    --danger-color: #e53935;
+    --danger-hover: #d32f2f;
 
-    --border-color: #2f2f2f;
-    --muted-color: #aaaaaa;
+    --border-color: #414165;
+    --muted-color: #9e9e9e;
 
-    /* Layout & spacing */
-    --admin-sidebar-width: 220px;
-    --border-radius: 8px;
-    --box-padding: 1.5rem;
-    --transition-speed: 0.25s;
-
-    /* Typography */
     --font-family: 'Inter', sans-serif;
     --font-size-base: 16px;
     --font-size-sm: 14px;
     --font-size-md: 18px;
     --font-size-lg: 22px;
-}
 
-@media (prefers-color-scheme: light) {
-    :root {
-        /* Light mode fallback if you'd like to accommodate it */
-        --background-color: #fafafa;
-        --sidebar-bg: #f2f2f2;
-        --card-bg: #ffffff;
-        --card-hover-bg: #f5f5f5;
-
-        --text-color: #333333;
-        --header-color: #111111;
-        --accent-color: #555555;
-
-        --link-color: #0077cc;
-        --link-hover-color: #005fa3;
-        --danger-color: #d9534f;
-
-        --border-color: #eaeaea;
-        --muted-color: #888888;
-    }
+    --box-padding: 1.5rem;
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
 }
 
 /***********************************************************
@@ -65,19 +41,13 @@
     box-sizing: border-box;
 }
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
     font-family: var(--font-family);
     font-size: var(--font-size-base);
-    line-height: 1.5;
+    background-color: var(--background-color);
+    color: var(--text-color);
     -webkit-font-smoothing: antialiased;
-}
-button {
-    cursor: pointer;
-    font-family: var(--font-family);
-}
-ul {
-    list-style-type: none;
+    max-width:1440px;
+    margin: 0 auto;
 }
 
 /***********************************************************
@@ -85,61 +55,37 @@ ul {
  ***********************************************************/
 .admin-page-layout {
     display: flex;
-    min-height: 100vh;
-    max-width:1440px;
-    margin: 0 auto;
+    height: 100vh;
 }
 .admin-sidebar {
-    width: var(--admin-sidebar-width);
+    width: 240px;
     background-color: var(--sidebar-bg);
-    border-right: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    padding: 1rem 0;
-    /* nice subtle shadow on the right edge */
-    box-shadow: 2px 0 6px rgba(0,0,0,0.3);
-}
-.sidebar-title {
-    font-size: var(--font-size-md);
-    font-weight: 700;
-    color: var(--header-color);
-    text-align: center;
-    margin-bottom: 1.5rem;
+    padding: 1.5rem 1rem;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
 }
 .admin-sidebar ul {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    padding: 0 0.5rem;
+    gap: 1rem;
 }
 .admin-sidebar li {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    color: var(--accent-color);
-    padding: 0.6rem 0.8rem;
+    padding: 0.75rem 1rem;
     border-radius: var(--border-radius);
-    transition: background-color var(--transition-speed),
-    color var(--transition-speed);
+    color: var(--accent-color);
+    transition: background-color var(--transition-speed);
+    cursor: pointer;
 }
 .admin-sidebar li:hover {
     background-color: var(--card-hover-bg);
     color: var(--text-color);
 }
 .admin-sidebar li.active {
-    background-color: var(--link-color);
+    background-color: var(--primary-color);
     color: #ffffff;
-}
-.admin-sidebar li.active:hover {
-    background-color: var(--link-hover-color);
-}
-.admin-sidebar li span {
-    font-size: var(--font-size-sm);
-    font-weight: 600;
-}
-.admin-sidebar svg {
-    width: 18px;
-    height: 18px;
 }
 
 /***********************************************************
@@ -156,14 +102,13 @@ ul {
  ***********************************************************/
 .admin-section {
     background-color: var(--card-bg);
-    border-radius: var(--border-radius);
     padding: var(--box-padding);
-    margin-bottom: 2rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
     transition: box-shadow var(--transition-speed);
 }
 .admin-section:hover {
-    box-shadow: 0 2px 5px rgba(0,0,0,0.35);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 .admin-section h2 {
     font-size: var(--font-size-lg);
@@ -175,99 +120,169 @@ ul {
  * FORM ELEMENTS
  ***********************************************************/
 .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 .form-group label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 0.3rem;
+    font-size: var(--font-size-sm);
     color: var(--muted-color);
+    display: block;
+    margin-bottom: 0.5rem;
 }
 .form-group input,
-.form-group textarea {
-    background-color: #2f2f2f;
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    background-color: #2f2f46;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
-    padding: 0.6rem 0.75rem;
     color: var(--text-color);
-    font-size: 0.95rem;
-    transition: border-color var(--transition-speed),
-    background-color var(--transition-speed);
+    padding: 0.8rem 1rem;
+    font-size: var(--font-size-base);
+    transition: border-color var(--transition-speed);
 }
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--link-color);
-    background-color: #3a3a3a;
+.form-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/***********************************************************
+ * CHECKBOX STYLING
+ ***********************************************************/
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    background-color: #2f2f46;
+    cursor: pointer;
+}
+.checkbox-group input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 /***********************************************************
  * BUTTONS
  ***********************************************************/
-.admin-save-button {
-    display: inline-block;
-    background-color: var(--link-color);
-    color: #ffffff;
+button {
     border: none;
     border-radius: var(--border-radius);
-    padding: 0.55rem 1.2rem;
-    font-size: 0.85rem;
+    padding: 0.8rem 1.4rem;
+    font-size: var(--font-size-base);
     font-weight: 600;
-    margin-top: 0.5rem;
-    transition: background-color var(--transition-speed), transform 0.1s ease;
+    transition: all var(--transition-speed);
 }
-.admin-save-button:hover {
-    background-color: var(--link-hover-color);
-    transform: scale(1.02);
+button.add-button {
+    background-color: var(--primary-color);
+    color: #ffffff;
 }
-.admin-save-button:active {
-    transform: scale(0.98);
+button.add-button:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-.admin-save-button[disabled] {
-    opacity: 0.6;
-    pointer-events: none;
+button.danger-button {
+    background-color: var(--danger-color);
+    color: #ffffff;
 }
-.admin-save-button[style*="backgroundColor: #bb2b2b"] {
-    background-color: var(--danger-color) !important;
+button.danger-button:hover {
+    background-color: var(--danger-hover);
 }
-.admin-save-button[style*="backgroundColor: #bb2b2b"]:hover {
-    background-color: #a62828 !important;
+/***********************************************************
+ * CHECKBOX GROUP
+ ***********************************************************/
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
 }
-
-/* Just an example if you want different colors for "Add" vs "Save" vs "Remove" */
-.admin-save-button.add-button {
-    background-color: #3c7f3c; /* some green? */
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    background-color: #2f2f46;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
 }
-.admin-save-button.add-button:hover {
-    background-color: #519951;
+.checkbox-group input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 /***********************************************************
- * REPEATED ITEM BLOCKS
+ * LOGO UPLOAD SECTION
  ***********************************************************/
-.position-item,
-.education-item,
-.achievement-item,
-.reference-item {
-    background-color: #333333;
+.logo-upload-section {
+    margin: 2rem 0;
+    text-align: center;
+}
+.logo-upload-section label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--muted-color);
+    margin-bottom: 0.5rem;
+}
+.logo-upload-section .upload-button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.6rem 1.4rem;
+    border-radius: var(--border-radius);
+    border: none;
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+.logo-upload-section .upload-button:hover {
+    background-color: var(--primary-hover);
+}
+.logo-preview {
+    margin-top: 1rem;
+    background-color: var(--card-hover-bg);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
-    padding: 1rem;
-    margin-top: 1rem;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.position-item:hover,
-.education-item:hover,
-.achievement-item:hover,
-.reference-item:hover {
-    background-color: #393939;
+.logo-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 /***********************************************************
- * PAGE TITLE
+ * SAVE BUTTON
  ***********************************************************/
-.admin-page-title {
-    display: none; /* If you prefer not to show a big title at top
-                    because the sidebar handles your branding */
+.admin-save-button {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.8rem 2rem;
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    color: #ffffff;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-align: center;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.admin-save-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+.admin-save-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import "../assets/admin.css";
-import { IconContact, IconSummary } from "../components/Icons.jsx";
+import {IconContact,
+    IconSummary,
+    IconExperience,
+    IconEducation,
+    IconAchievements,
+    IconSkills,
+    IconStrengths,
+    IconReferences } from "../components/Icons.jsx";
 
 // Import your new sub-components:
 import AdminSidebar from "../components/admin/AdminSidebar";
 import ContactSection from "../components/admin/ContactSection";
 import SummarySection from "../components/admin/SummarySection";
-
+import ExperienceSection from "../components/admin/ExperienceSection";
 function AdminCMS() {
     // -------------------------------------
     // CONTACT + SUMMARY STATE
@@ -29,6 +36,12 @@ function AdminCMS() {
     const sidebarLinks = [
         { id: "contact", label: "Contact", icon: <IconContact width={24} height={24} /> },
         { id: "summary", label: "Summary", icon: <IconSummary width={24} height={24} /> },
+        { id: "experience", label: "Experience", icon: <IconExperience width={24} height={24} /> },
+        { id: "education", label: "Education", icon: <IconEducation width={24} height={24} /> },
+        { id: "achievements", label: "Achievements", icon: <IconAchievements width={24} height={24} /> },
+        { id: "skills", label: "Skills", icon: <IconSkills width={24} height={24} /> },
+        { id: "strengths", label: "Strengths", icon: <IconStrengths width={24} height={24} /> },
+        { id: "references", label: "References", icon: <IconReferences width={24} height={24} /> }
     ];
 
     // -------------------------------------
@@ -94,6 +107,14 @@ function AdminCMS() {
     } else if (activeSection === "summary") {
         mainContent = (
             <SummarySection
+                summary={summary}
+                setSummary={setSummary}
+                onSave={handleSaveSummary}
+            />
+        );
+    }  else if (activeSection === "experience") {
+        mainContent = (
+            <ExperienceSection
                 summary={summary}
                 setSummary={setSummary}
                 onSave={handleSaveSummary}

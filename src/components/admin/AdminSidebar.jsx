@@ -5,7 +5,7 @@ import React from "react";
 function AdminSidebar({ sidebarLinks, activeSection, onChangeSection }) {
     return (
         <aside className="admin-sidebar">
-            <div className="sidebar-title">CMS Sections</div>
+            <div className="sidebar-title">Resume CMS</div>
             <ul>
                 {sidebarLinks.map((link) => (
                     <li
