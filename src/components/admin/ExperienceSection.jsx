@@ -100,22 +100,25 @@ function ExperienceSection() {
 
             {companies.map((company) => (
                 <div key={company.id} className="position-item">
-                    <div className="card" onClick={() => handleToggleExpand(company.id)}>
-                        <div className="logo">
+                    <div
+                        className="card company-card"
+                        onClick={() => handleToggleExpand(company.id)}
+                    >
+                        <div className="card-logo">
                             {company.logo ? (
                                 <img
                                     src={company.logo}
                                     alt={`${company.companyName} Logo`}
-                                    style={{ width: "100px", height: "100px", objectFit: "contain" }}
+                                    className="logo-img"
                                 />
                             ) : (
-                                <div style={{ width: "100px", height: "100px", background: "#ccc" }}>
-                                    No Logo
-                                </div>
+                                <div className="no-logo">No Logo</div>
                             )}
                         </div>
-                        <h2 className="company-header">{company.companyName}</h2>
-                        <h3 className="company-header">{company.title}</h3>
+                        <div className="card-content">
+                            <h2 className="company-header">{company.companyName}</h2>
+                            <h3 className="company-title">{company.title}</h3>
+                        </div>
                     </div>
 
                     {/* Expandable detail form */}
