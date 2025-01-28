@@ -34,7 +34,12 @@ const experienceSlice = createSlice({
         error: null,
     },
     reducers: {
-        // Add a new company
+        // NEW REDUCER: set (or replace) the companies array
+        setCompanies: (state, action) => {
+            state.companies = action.payload;
+        },
+
+        // Add a new blank company
         addCompany: (state) => {
             state.companies.push({
                 id: Date.now().toString(),
@@ -43,7 +48,7 @@ const experienceSlice = createSlice({
                 tenure: "",
                 accomplishments: [],
                 isVisible: true,
-                logo: null, // New field for storing the uploaded logo
+                logo: null, // for storing an uploaded logo
             });
         },
         // Remove a company
@@ -55,30 +60,38 @@ const experienceSlice = createSlice({
         // Toggle the visibility of a company
         toggleCompanyVisibility: (state, action) => {
             const company = state.companies.find(
-                (company) => company.id === action.payload
+                (c) => c.id === action.payload
             );
-            if (company) company.isVisible = !company.isVisible;
+            if (company) {
+                company.isVisible = !company.isVisible;
+            }
         },
         // Update a specific field of a company
         updateCompanyField: (state, action) => {
             const { companyId, field, value } = action.payload;
             const company = state.companies.find((c) => c.id === companyId);
-            if (company) company[field] = value;
+            if (company) {
+                company[field] = value;
+            }
         },
-        // Add a new accomplishment to a company
+        // Add an empty accomplishment
         addAccomplishment: (state, action) => {
             const company = state.companies.find(
-                (company) => company.id === action.payload
+                (c) => c.id === action.payload
             );
-            if (company) company.accomplishments.push("");
+            if (company) {
+                company.accomplishments.push("");
+            }
         },
-        // Remove an accomplishment from a company
+        // Remove an accomplishment
         removeAccomplishment: (state, action) => {
             const { companyId, index } = action.payload;
             const company = state.companies.find(
-                (company) => company.id === companyId
+                (c) => c.id === companyId
             );
-            if (company) company.accomplishments.splice(index, 1);
+            if (company) {
+                company.accomplishments.splice(index, 1);
+            }
         },
     },
     extraReducers: (builder) => {
@@ -89,7 +102,9 @@ const experienceSlice = createSlice({
             })
             .addCase(saveExperience.fulfilled, (state, action) => {
                 state.status = "idle";
-                state.companies = action.payload; // Update state with saved data
+                // If the API returns the updated list of experiences,
+                // set them here:
+                state.companies = action.payload;
             })
             .addCase(saveExperience.rejected, (state, action) => {
                 state.status = "failed";
@@ -98,8 +113,9 @@ const experienceSlice = createSlice({
     },
 });
 
-// Export actions and reducer
+// Export the reducer and actions
 export const {
+    setCompanies,         // Make sure to export this
     addCompany,
     removeCompany,
     toggleCompanyVisibility,
@@ -107,4 +123,5 @@ export const {
     addAccomplishment,
     removeAccomplishment,
 } = experienceSlice.actions;
+
 export default experienceSlice.reducer;

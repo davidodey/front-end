@@ -280,3 +280,8 @@ li {
         font-size: 1.7rem;
     }
 }
+
+.card {
+    display:flex !important;
+    flex-direction: row;
+}
