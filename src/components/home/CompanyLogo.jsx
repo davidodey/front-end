@@ -2,9 +2,9 @@ import React from 'react';
 import {PearsonLogo} from "../Icons.jsx";
 
 
-export default function CompanyLogo ({width, height}) {
+export default function CompanyLogo ({data}) {
     return (
-        <PearsonLogo width={70} height={70} />
+        <img src={data.logo} width={75} height={75} />
     )
 }
 

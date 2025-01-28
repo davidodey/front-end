@@ -41,7 +41,13 @@ function Home() {
                     )}
                 </section>
                 <section className="professional-experience">
-                    <Experience/>
+                    <h2>Professional Experience</h2>
+                    {
+                        profile?.experiences?.map((experience, index) => {
+                           return <Experience key={index} data={experience}/>
+                        })
+                    }
+
                 </section>
 
                     <section className="summary">
