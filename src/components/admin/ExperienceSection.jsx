@@ -202,14 +202,14 @@ function ExperienceSection() {
                 </div>
             ))}
 
-            {companies.length > 0 && (
-                <SaveButton
-                    onClick={handleSave}
-                    label="Save Experience"
-                    isLoading={status === "saving"}
-                    className="admin-save-button"
-                />
-            )}
+            {/*{companies.length > 0 && (*/}
+            {/*    <SaveButton*/}
+            {/*        onClick={handleSave}*/}
+            {/*        label="Save Experience"*/}
+            {/*        isLoading={status === "saving"}*/}
+            {/*        className="admin-save-button"*/}
+            {/*    />*/}
+            {/*)}*/}
         </div>
     );
 }

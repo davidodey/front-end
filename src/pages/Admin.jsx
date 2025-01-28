@@ -14,6 +14,7 @@ import AdminSidebar from "../components/admin/AdminSidebar";
 import ContactSection from "../components/admin/ContactSection";
 import SummarySection from "../components/admin/SummarySection";
 import ExperienceSection from "../components/admin/ExperienceSection";
+import {useSelector} from "react-redux";
 function AdminCMS() {
     // -------------------------------------
     // CONTACT + SUMMARY STATE
@@ -26,7 +27,7 @@ function AdminCMS() {
     const [location, setLocation] = useState("Phoenix, AZ");
 
     const [summary, setSummary] = useState("Award-winning Creative Technologist...");
-
+    const { profile } = useSelector((state) => state.user);
     // -------------------------------------
     //  Which section is active in the sidebar
     // -------------------------------------
@@ -107,7 +108,7 @@ function AdminCMS() {
     } else if (activeSection === "summary") {
         mainContent = (
             <SummarySection
-                summary={summary}
+                summary={profile.summaries.summary}
                 setSummary={setSummary}
                 onSave={handleSaveSummary}
             />
