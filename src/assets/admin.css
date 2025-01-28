@@ -348,3 +348,36 @@ button.danger-button:hover {
     font-size: var(--font-size-sm);
     color: var(--accent-color);
 }
+
+/* Style the input field */
+input[type="date"] {
+    color: white; /* Text color */
+    background-color: var(--card-bg); /* Background color to match your theme */
+    border: 1px solid var(--border-color); /* Border color */
+    border-radius: var(--border-radius);
+    padding: 0.8rem 1rem;
+    font-size: var(--font-size-base);
+    transition: border-color var(--transition-speed);
+}
+
+/* Change the icon color for webkit browsers */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Makes the icon white */
+    cursor: pointer;
+}
+
+/* Remove default appearance for date picker */
+input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none; /* For Safari/Chrome */
+}
+
+/* Add hover and focus styles */
+input[type="date"]:hover {
+    border-color: var(--primary-color); /* Border color on hover */
+}
+
+input[type="date"]:focus {
+    outline: none;
+    border-color: var(--primary-color); /* Border color on focus */
+}
