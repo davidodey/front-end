@@ -337,8 +337,9 @@ function ExperienceSection() {
                                 </div>
 
                                 <div className="form-group checkbox-group">
-                                    <label>
+                                    <label style={{display:'flex', alignItems: 'center'}}>
                                         <input
+                                            style={{marginRight: '10px'}}
                                             type="checkbox"
                                             checked={company.present || false}
                                             onChange={(e) =>
@@ -353,33 +354,44 @@ function ExperienceSection() {
                                     </label>
                                 </div>
 
-                                <div className="form-group logo-upload-section">
-                                    <label>Company Logo</label>
-                                    <input
-                                        id={`logo-upload-${company.id}`}
-                                        type="file"
-                                        accept="image/*"
-                                        style={{ display: "none" }}
-                                        onChange={(e) =>
-                                            handleFileChange(company.id, e.target.files[0])
-                                        }
-                                    />
-                                    <label
-                                        htmlFor={`logo-upload-${company.id}`}
-                                        className="upload-button"
-                                    >
-                                        Upload Logo
-                                    </label>
+                                <div className="form-group" style={{display:'flex', alignItems: 'center', marginTop:'24px'}}>
+                                    <div className="form-actions">
+                                        <button
+                                            className="primary-btn"
+                                            onClick={() => handleSaveEdits(company.id)}
+                                        >
+                                            Save Edits
+                                        </button>
+                                    </div>
+                                    <div className="form-group logo-upload-section" style={{margin:'0', marginLeft:'12px'}}>
+                                        <input
+                                            id={`logo-upload-${company.id}`}
+                                            type="file"
+                                            accept="image/*"
+                                            style={{ display: "none" }}
+                                            onChange={(e) =>
+                                                handleFileChange(company.id, e.target.files[0])
+                                            }
+                                        />
+                                        <label
+                                            htmlFor={`logo-upload-${company.id}`}
+                                            className="upload-button"
+                                            style={{margin:'0'}}
+                                        >
+                                            Upload Logo
+                                        </label>
+                                    </div>
+                                    <div className="form-actions" style={{marginLeft:'12px'}}>
+                                        <button
+                                            className="add-button"
+                                            onClick={() => handleSaveEdits(company.id)}
+                                        >
+                                            Add Accomplishments
+                                        </button>
+                                    </div>
+
                                 </div>
 
-                                <div className="form-actions">
-                                    <button
-                                        className="add-button"
-                                        onClick={() => handleSaveEdits(company.id)}
-                                    >
-                                        Save Edits
-                                    </button>
-                                </div>
                             </div>
                         )}
                     </div>
