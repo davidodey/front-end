@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { TrashIcon } from "../../components/Icons.jsx"
+import SaveButton from "./SaveButton.jsx";
 import {
     setCompanies,
     addCompany,
@@ -16,7 +18,11 @@ function ExperienceSection() {
 
     // Local state for expanded card and "Add Company" mode
     const [expandedCompanyId, setExpandedCompanyId] = useState(null);
+    const [addAccomplishment, setAddAccomplishment] = useState(null);
+    const [accomplishment, setAccomplishment] = useState([]);
+    const [editingAccomplishmentIndex, setEditingAccomplishmentIndex] = useState(null);
     const [isAddingCompany, setIsAddingCompany] = useState(false);
+    const [isSaving, setIsSaving] = useState(false);
     const [newCompany, setNewCompany] = useState({
         companyName: "",
         title: "",
@@ -32,15 +38,51 @@ function ExperienceSection() {
         }
     }, [profile, dispatch]);
 
+    async function addAccomplishments () {
+        // Display an input f
+        setAddAccomplishment(true)
+    }
+
     // Toggle which company card is expanded
     const handleToggleExpand = (companyId) => {
         setExpandedCompanyId((prev) => (prev === companyId ? null : companyId));
     };
 
-    // Update Redux when a field changes
-    const handleFieldChange = (companyId, field, value) => {
-        dispatch(updateCompanyField({ companyId, field, value }));
+
+    const handleFieldChange = (companyId, field, value, index = null) => {
+        if (field === "accomplishments") {
+            if (index !== null) {
+                // Editing an existing accomplishment
+                setAccomplishment((prevAccomplishments) => {
+                    const updated = [...prevAccomplishments];
+                    updated[index] = { desc: value };
+                    return updated;
+                });
+
+                // Update Redux state immediately
+                const updatedCompany = companies.find((c) => c.id === companyId);
+                if (updatedCompany) {
+                    const updatedAccomplishments = [...updatedCompany.accomplishments];
+                    updatedAccomplishments[index] = { desc: value };
+
+                    dispatch(updateCompanyField({
+                        companyId,
+                        field: "accomplishments",
+                        value: updatedAccomplishments,
+                    }));
+                }
+            } else {
+                // New accomplishment being added
+                setAddAccomplishment({ desc: value });
+            }
+        } else {
+            // Regular field update
+            dispatch(updateCompanyField({ companyId, field, value }));
+        }
     };
+
+
+
 
     // Handle file upload for existing companies
     const handleFileChange = (companyId, file) => {
@@ -70,24 +112,39 @@ function ExperienceSection() {
         }
     };
 
-    // Save edits to a single company
-    const handleSaveEdits = async (companyId) => {
+    const handleRemoveAccomplishment = async (companyId, index) => {
         try {
-            // Find the company in the Redux array
             const updatedCompany = companies.find((c) => c.id === companyId);
-
-            if (!profile?.sub || !updatedCompany) {
-                console.error("User ID or updated company is missing.");
+            if (!updatedCompany) {
+                console.error("Company not found.");
                 return;
             }
 
-            // Prepare payload with the single updated company
+            let updatedAccomplishments = [...updatedCompany.accomplishments];
+
+            // Remove the selected accomplishment
+            updatedAccomplishments.splice(index, 1);
+
+            // Ensure Firestore receives a valid array
+            updatedAccomplishments = updatedAccomplishments.flat();
+
+            // Update Redux state immediately for UI sync
+            dispatch(updateCompanyField({
+                companyId,
+                field: "accomplishments",
+                value: updatedAccomplishments,
+            }));
+
+            // Prepare payload for backend
             const payload = {
                 userId: profile.sub,
-                experiences: [updatedCompany],
+                experiences: [{
+                    ...updatedCompany,
+                    accomplishments: updatedAccomplishments,
+                }],
             };
 
-            // Save the edited company
+            // Save changes to backend
             const response = await fetch("/server/api/experience/save", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -98,13 +155,71 @@ function ExperienceSection() {
                 throw new Error("Failed to save edited company.");
             }
 
-            const data = await response.json();
-            console.log("Company edits saved successfully:", data);
+            console.log("Accomplishment removed successfully.");
+        } catch (error) {
+            console.error("Error removing accomplishment:", error);
+        }
+    };
 
-            // You could refetch experiences if desired, but here we just collapse
+    const handleSaveEdits = async (companyId) => {
+        try {
+            setIsSaving(true);
+
+            const updatedCompany = companies.find((c) => c.id === companyId);
+            if (!updatedCompany) {
+                console.error("Company not found.");
+                return;
+            }
+
+            let updatedAccomplishments = Array.isArray(updatedCompany.accomplishments)
+                ? [...updatedCompany.accomplishments]
+                : [];
+
+            if (editingAccomplishmentIndex !== null) {
+                updatedAccomplishments[editingAccomplishmentIndex] = { desc: accomplishment };
+                setEditingAccomplishmentIndex(null);
+            } else if (addAccomplishment && addAccomplishment.desc.trim() !== "") {
+                updatedAccomplishments.push({ desc: addAccomplishment.desc.trim() });
+            }
+
+            updatedAccomplishments = updatedAccomplishments.flat();
+
+            setAddAccomplishment(null);
+            setAccomplishment([]);
+
+            const payload = {
+                userId: profile.sub,
+                experiences: [{
+                    ...updatedCompany,
+                    accomplishments: updatedAccomplishments,
+                }],
+            };
+
+            const response = await fetch("/server/api/experience/save", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to save edited company.");
+            }
+
+            console.log("Company edits saved successfully.");
+
+            const updatedResponse = await fetch(`/server/api/public/user?userId=${profile.sub}`);
+            if (!updatedResponse.ok) {
+                throw new Error("Failed to fetch updated experiences.");
+            }
+            const updatedData = await updatedResponse.json();
+
+            dispatch(setCompanies(updatedData.user.experiences));
+
             setExpandedCompanyId(null);
         } catch (error) {
             console.error("Failed to save edits:", error);
+        } finally {
+            setIsSaving(false);
         }
     };
 
@@ -241,7 +356,7 @@ function ExperienceSection() {
             logo: "",
         });
     };
-
+    console.log('250', companies)
     return (
         <div className="admin-section">
             <h2 className="admin-page-title">Professional Experience (Admin)</h2>
@@ -353,43 +468,70 @@ function ExperienceSection() {
                                         Currently Working Here
                                     </label>
                                 </div>
-
+                                {company.accomplishments?.length > 0 ?
+                                    company.accomplishments.map((accomplishment, index) => (
+                                        <div key={index} className="form-group" style={{ display: 'flex', alignItems: 'center' }}>
+                                            <input
+                                                type="text"
+                                                value={editingAccomplishmentIndex === index ? accomplishment.desc : company.accomplishments[index].desc}
+                                                onChange={(e) => handleFieldChange(company.id, "accomplishments", e.target.value, index)}
+                                                onFocus={() => setEditingAccomplishmentIndex(index)}
+                                                style={{ flex: 1 }}
+                                            />
+                                            {/* Delete Accomplishment Button */}
+                                            <button
+                                                onClick={() => handleRemoveAccomplishment(company.id, index)}
+                                                style={{
+                                                    background: "transparent",
+                                                    border: "none",
+                                                    cursor: "pointer",
+                                                    marginLeft: "10px",
+                                                    padding: "5px",
+                                                }}
+                                                title="Remove Accomplishment"
+                                            >
+                                                <TrashIcon size={20} color="#ff4d4f" />
+                                            </button>
+                                        </div>
+                                    )) :
+                                    addAccomplishment ? null : <p>Please add an accomplishment!</p>
+                                }
+                                {
+                                    addAccomplishment ?
+                                        <div className="form-group">
+                                            <label>Accomplishment</label>
+                                            <input
+                                                type="text"
+                                                onChange={(e) =>
+                                                    handleFieldChange(
+                                                        company.id,
+                                                        "accomplishments",
+                                                        e.target.value
+                                                    )
+                                                }
+                                            />
+                                        </div>
+                                        : null
+                                }
                                 <div className="form-group" style={{display:'flex', alignItems: 'center', marginTop:'24px'}}>
                                     <div className="form-actions">
-                                        <button
-                                            className="primary-btn"
+                                        <SaveButton
                                             onClick={() => handleSaveEdits(company.id)}
-                                        >
-                                            Save Edits
-                                        </button>
-                                    </div>
-                                    <div className="form-group logo-upload-section" style={{margin:'0', marginLeft:'12px'}}>
-                                        <input
-                                            id={`logo-upload-${company.id}`}
-                                            type="file"
-                                            accept="image/*"
-                                            style={{ display: "none" }}
-                                            onChange={(e) =>
-                                                handleFileChange(company.id, e.target.files[0])
-                                            }
+                                            label="Save Edits"
+                                            isLoading={isSaving}
                                         />
-                                        <label
-                                            htmlFor={`logo-upload-${company.id}`}
-                                            className="upload-button"
-                                            style={{margin:'0'}}
-                                        >
-                                            Upload Logo
-                                        </label>
                                     </div>
-                                    <div className="form-actions" style={{marginLeft:'12px'}}>
+
+
+
+                                    <div className="form-actions" style={{marginLeft:'12px',marginTop: '2rem'}}>
                                         <button
                                             className="add-button"
-                                            onClick={() => handleSaveEdits(company.id)}
+                                            onClick={() => addAccomplishments(company.id)}
                                         >
                                             Add Accomplishments
                                         </button>
                                     </div>
-
                                 </div>
 
                             </div>
@@ -489,6 +631,7 @@ function ExperienceSection() {
                     </div>
                 </div>
             )}
+
         </div>
     );
 }

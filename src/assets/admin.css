@@ -39,6 +39,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
 }
 body {
     font-family: var(--font-family);
@@ -117,17 +120,22 @@ body {
 }
 
 /***********************************************************
- * FORM ELEMENTS
+ * FORM ELEMENTS - WITH LABELS
  ***********************************************************/
 .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     margin-bottom: 1.5rem;
 }
+
 .form-group label {
     font-size: var(--font-size-sm);
     color: var(--muted-color);
-    display: block;
-    margin-bottom: 0.5rem;
+    font-weight: 500;
 }
+
+/* Input, Textarea, and Select fields */
 .form-group input,
 .form-group textarea,
 .form-group select {
@@ -140,10 +148,16 @@ body {
     font-size: var(--font-size-base);
     transition: border-color var(--transition-speed);
 }
-.form-group input:focus {
+
+/* Improve focus styles */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
     border-color: var(--primary-color);
     outline: none;
+    background-color: #343453;
 }
+
 
 /***********************************************************
  * CHECKBOX STYLING
@@ -380,4 +394,242 @@ input[type="date"]:hover {
 input[type="date"]:focus {
     outline: none;
     border-color: var(--primary-color); /* Border color on focus */
+}
+
+/***********************************************************
+ * SKILLS SECTION STYLING IMPROVEMENTS
+ ***********************************************************/
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+/* Skill Card */
+.skill-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+    text-align: center;
+    max-width: 260px;
+}
+
+.skill-card:hover {
+    background-color: var(--card-hover-bg);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.skill-name {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.skill-description {
+    font-size: var(--font-size-sm);
+    color: var(--accent-color);
+}
+
+/* Remove Button Styling */
+.skill-remove-button {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+    width: 100%;
+    margin-top: 0.75rem;
+}
+
+.skill-remove-button:hover {
+    background-color: var(--danger-hover);
+}
+
+/***********************************************************
+ * ADD SKILL FORM
+ ***********************************************************/
+.add-skill-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.save-button {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    padding: 0.8rem 1.4rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+    text-align: center;
+}
+
+.save-button:hover {
+    background-color: var(--primary-hover);
+}
+
+.cancel-button {
+    background-color: var(--muted-color);
+    color: white;
+    font-weight: bold;
+    padding: 0.8rem 1.4rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+    text-align: center;
+    margin-left: 10px;
+}
+
+.cancel-button:hover {
+    background-color: var(--border-color);
+}
+/***********************************************************
+ * ALIGNMENT FIXES
+ ***********************************************************/
+.admin-section {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Skill form centered properly */
+.add-skill-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/***********************************************************
+ * SKILLS SECTION - FORM LAYOUT FIXES
+ ***********************************************************/
+.add-skill-container {
+    display: flex;
+    justify-content: flex-start; /* Left-align */
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px; /* Controls width */
+}
+
+/* Two-column grid layout for better spacing */
+.skill-form-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 700px;
+    align-items: center;
+}
+
+/* Full width for text areas */
+.full-width {
+    grid-column: span 2;
+}
+
+/* Align form inputs */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+/* Style labels */
+.form-group label {
+    font-size: var(--font-size-sm);
+    color: var(--muted-color);
+    font-weight: 500;
+    text-align: left;
+}
+
+/* Inputs, textareas, and selects */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 95%;
+    background-color: #2f2f46;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    padding: 0.8rem 1rem;
+    font-size: var(--font-size-base);
+    transition: border-color var(--transition-speed);
+}
+
+/* Input focus */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    background-color: #343453;
+}
+
+/***********************************************************
+ * BUTTON ALIGNMENT
+ ***********************************************************/
+.form-actions {
+    display: flex;
+    justify-content: flex-start; /* Left-align buttons */
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Save Button */
+.save-button {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    padding: 0.8rem 1.4rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+    text-align: center;
+}
+
+.save-button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Cancel Button */
+.cancel-button {
+    background-color: var(--muted-color);
+    color: white;
+    font-weight: bold;
+    padding: 0.8rem 1.4rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+    text-align: center;
+}
+
+.cancel-button:hover {
+    background-color: var(--border-color);
 }

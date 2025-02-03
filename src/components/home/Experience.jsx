@@ -1,6 +1,5 @@
 import React from "react";
 import CompanyLogo from "./CompanyLogo.jsx";
-import Accomplisment from "./CompanyAccomplishments.jsx";
 
 export default function Experience({data}) {
     return (
@@ -12,7 +11,6 @@ export default function Experience({data}) {
                     <div className="job-title">
                         <div className="flex">
                             <div className="logo">
-                                {/*Ability to upload logo to assign to ssaid company*/}
                                 <CompanyLogo data={data} width={60} height={60} />
                             </div>
                             <div className="company-icon">
@@ -23,12 +21,11 @@ export default function Experience({data}) {
                         <span className="job-tenure">2020 - 2025</span>
                     </div>
                 </div>
-                {/*<div className="my-accomplishments">*/}
-                {/*    <ul>*/}
-                {/*        /!*Ability to add / remove accomplishements.*!/*/}
-                {/*        <Accomplisment />*/}
-                {/*    </ul>*/}
-                {/*</div>*/}
+                {
+                    data.accomplishments?.map(item => {
+                        return <li>{item.desc}</li>
+                    })
+                }
             </article>
         </>
     );

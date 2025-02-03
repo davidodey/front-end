@@ -13,6 +13,7 @@ import {IconContact,
 import AdminSidebar from "../components/admin/AdminSidebar";
 import ContactSection from "../components/admin/ContactSection";
 import SummarySection from "../components/admin/SummarySection";
+import SkillsSection from "../components/admin/SkillsSection";
 import ExperienceSection from "../components/admin/ExperienceSection";
 import {useSelector} from "react-redux";
 function AdminCMS() {
@@ -24,7 +25,7 @@ function AdminCMS() {
     const [phone, setPhone] = useState("480-493-9525");
     const [email, setEmail] = useState("davodey@gmail.com");
     const [github, setGithub] = useState("github.com/davodey");
-    const [location, setLocation] = useState("Phoenix, AZ");
+    const [location, setLocation] = useState("Phoenix, AZs");
 
     const [summary, setSummary] = useState("Award-winning Creative Technologist...");
     const { profile } = useSelector((state) => state.user);
@@ -38,7 +39,6 @@ function AdminCMS() {
         { id: "contact", label: "Contact", icon: <IconContact width={24} height={24} /> },
         { id: "summary", label: "Summary", icon: <IconSummary width={24} height={24} /> },
         { id: "experience", label: "Experience", icon: <IconExperience width={24} height={24} /> },
-        { id: "education", label: "Education", icon: <IconEducation width={24} height={24} /> },
         { id: "achievements", label: "Achievements", icon: <IconAchievements width={24} height={24} /> },
         { id: "skills", label: "Skills", icon: <IconSkills width={24} height={24} /> },
         { id: "strengths", label: "Strengths", icon: <IconStrengths width={24} height={24} /> },
@@ -116,6 +116,14 @@ function AdminCMS() {
     }  else if (activeSection === "experience") {
         mainContent = (
             <ExperienceSection
+                summary={summary}
+                setSummary={setSummary}
+                onSave={handleSaveSummary}
+            />
+        );
+    }   else if (activeSection === "skills") {
+        mainContent = (
+            <SkillsSection
                 summary={summary}
                 setSummary={setSummary}
                 onSave={handleSaveSummary}
