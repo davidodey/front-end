@@ -12,18 +12,12 @@ function SkillsSection() {
         name: "",
         logo: "",
         description: "",
-        yearsOfExperience: 0,
-        proficiencyLevel: "Beginner",
-        lastUsed: new Date().getFullYear(),
-        frequencyOfUse: "Occasionally",
-        certifications: 0,
-        projects: 0,
-        industryImpact: "Low",
     });
 
     const [isAdding, setIsAdding] = useState(false);
     const [isSaving, setIsSaving] = useState(false);
 
+    // ✅ Fetch skills from backend
     useEffect(() => {
         const fetchSkills = async () => {
             try {
@@ -38,86 +32,119 @@ function SkillsSection() {
         fetchSkills();
     }, [dispatch]);
 
+    // ✅ Handle Input Change (for Name, SVG, and Description)
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setNewSkill((prev) => ({ ...prev, [name]: value }));
+    };
+
+    // ✅ Handle Adding a New Skill
+    const handleAddSkill = async () => {
+        if (!newSkill.name.trim() || !newSkill.logo.trim() || !newSkill.description.trim()) {
+            alert("All fields are required.");
+            return;
+        }
+
+        setIsSaving(true);
+        const skillWithId = { ...newSkill, id: uuidv4() };
+
+        try {
+            const response = await fetch("/server/api/skills/save", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(skillWithId),
+            });
+
+            if (!response.ok) throw new Error("Failed to add skill.");
+
+            dispatch(addSkill(skillWithId));
+            setNewSkill({ name: "", logo: "", description: "" });
+            setIsAdding(false); // ✅ Close form after saving
+        } catch (error) {
+            console.error("Error adding skill:", error);
+        } finally {
+            setIsSaving(false);
+        }
+    };
+
+    // ✅ Handle Removing a Skill
+    const handleRemoveSkill = async (skillId) => {
+        try {
+            const response = await fetch(`/server/api/skills/delete/${skillId}`, {
+                method: "DELETE",
+            });
+
+            if (!response.ok) throw new Error("Failed to delete skill.");
+
+            dispatch(removeSkill(skillId));
+        } catch (error) {
+            console.error("Error deleting skill:", error);
+        }
     };
 
     return (
         <div className="admin-section">
             <h2>Skills</h2>
 
+            {/* Show "Add Skill" Button Initially */}
             {!isAdding && (
                 <button className="add-button" onClick={() => setIsAdding(true)}>
                     Add Skill
                 </button>
             )}
 
+            {/* Add Skill Form (Only Shown When "Add Skill" is Clicked) */}
             {isAdding && (
                 <div className="skill-card add-skill-card">
-                    <div className="form-group">
-                        <label htmlFor="name">Skill Name</label>
-                        <input type="text" id="name" name="name" value={newSkill.name} onChange={handleInputChange} />
-                    </div>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Skill Name"
+                        value={newSkill.name}
+                        onChange={handleInputChange}
+                    />
 
-                    <div className="form-group">
-                        <label htmlFor="logo">Skill Logo (SVG)</label>
-                        <textarea id="logo" name="logo" value={newSkill.logo} onChange={handleInputChange} rows="4" />
-                    </div>
+                    {/* Paste SVG Code */}
+                    <textarea
+                        name="logo"
+                        placeholder="Paste SVG Code Here"
+                        value={newSkill.logo}
+                        onChange={handleInputChange}
+                        rows="4"
+                    />
 
-                    <div className="form-group">
-                        <label htmlFor="description">Description</label>
-                        <textarea id="description" name="description" value={newSkill.description} onChange={handleInputChange} />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="yearsOfExperience">Years of Experience</label>
-                        <input type="number" id="yearsOfExperience" name="yearsOfExperience" value={newSkill.yearsOfExperience} onChange={handleInputChange} />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="proficiencyLevel">Proficiency Level</label>
-                        <select id="proficiencyLevel" name="proficiencyLevel" value={newSkill.proficiencyLevel} onChange={handleInputChange}>
-                            <option value="Beginner">Beginner</option>
-                            <option value="Intermediate">Intermediate</option>
-                            <option value="Advanced">Advanced</option>
-                            <option value="Expert">Expert</option>
-                        </select>
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="lastUsed">Last Used (Year)</label>
-                        <input type="number" id="lastUsed" name="lastUsed" value={newSkill.lastUsed} onChange={handleInputChange} />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="frequencyOfUse">Frequency of Use</label>
-                        <select id="frequencyOfUse" name="frequencyOfUse" value={newSkill.frequencyOfUse} onChange={handleInputChange}>
-                            <option value="Occasionally">Occasionally</option>
-                            <option value="Monthly">Monthly</option>
-                            <option value="Weekly">Weekly</option>
-                            <option value="Daily">Daily</option>
-                        </select>
-                    </div>
+                    <textarea
+                        name="description"
+                        placeholder="Skill Description"
+                        value={newSkill.description}
+                        onChange={handleInputChange}
+                    />
 
                     <div className="form-actions">
-                        <SaveButton onClick={() => alert("Saving skill...")} label="Save Skill" isLoading={isSaving} />
-                        <button className="cancel-button" onClick={() => setIsAdding(false)}>Cancel</button>
+                        <SaveButton onClick={handleAddSkill} label="Save Skill" isLoading={isSaving} />
+                        <button className="cancel-button" onClick={() => setIsAdding(false)}>
+                            Cancel
+                        </button>
                     </div>
                 </div>
             )}
 
+            {/* Display Skills */}
             <div className="skills-list">
                 {skills.length === 0 ? (
                     <p>No skills found. Add some!</p>
                 ) : (
                     skills.map((skill) => (
                         <div key={skill.id} className="skill-card">
-                            <div className="skill-icon" dangerouslySetInnerHTML={{ __html: skill.logo }} />
+                            <div
+                                className="skill-icon"
+                                dangerouslySetInnerHTML={{ __html: skill.logo }}
+                            />
                             <h3 className="skill-name">{skill.name}</h3>
                             <p className="skill-description">{skill.description}</p>
-                            <p className="skill-competency">Competency Score: {skill.competencyScore}</p>
-                            <button onClick={() => alert("Removing skill...")} className="skill-remove-button">Remove</button>
+                            <button onClick={() => handleRemoveSkill(skill.id)} className="skill-remove-button">
+                                Remove
+                            </button>
                         </div>
                     ))
                 )}
