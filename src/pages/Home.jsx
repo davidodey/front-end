@@ -45,9 +45,7 @@ function Home() {
                         <div className="my-accomplishments">
                             <ul>
                                 <li className="accomplishment">
-                                    Spearheaded the architecture, design, and development of
-                                        scalable systems that revolutionized digital learning and
-                                        streamlined workflows.
+                                    Led cross-functional teams in building scalable, high-performance front-end architectures while championing best practices in development, accessibility, and UX. Regularly presented technical strategies and innovations to executives, driving alignment and adoption across the organization.
                                     </li>
                                     <li className="accomplishment">
                                         Directed the creation of the Gravity Web Components Design System, delivering
@@ -198,7 +196,7 @@ function Home() {
                             <li className="skill">Design Systems & UX/UI: Proven ability to develop reusable component
                                 libraries, applying best practices in accessibility and user experience design.
                             </li>
-                            <li className="skill">Cloud & Deployment: Skilled in AWS (EC2, S3, Lambda), Firebase, and DigitalOcean for deploying, scaling, and maintaining robust services.
+                            <li className="skill">Cloud & Deployment: Skilled in AWS sdk implementation, Firebase, and DigitalOcean for deploying, scaling, and maintaining robust services.
                             </li>
 
                         </ul>
