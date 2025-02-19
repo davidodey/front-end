@@ -95,6 +95,9 @@ function Home() {
                         <div className="my-accomplishments">
                             <ul>
                                 <li className="accomplishment">
+                                    Designed and implemented pattern libraries to drive UI consistency across Pearson’s multiple applications. Standardized reusable react components, improving development efficiency, reducing design inconsistencies, and accelerating feature delivery.
+                                </li>
+                                <li className="accomplishment">
                                     Built prototypes and MVPs for user experience testing, focusing on reusable web
                                     components leveraging modern web component specifications.
                                 </li>
