@@ -193,7 +193,7 @@ function Home() {
                     <div className="skill-type">
                         <ul>
                             <li className="skill">Front-End Development: Expertise in React, Web Components, JavaScript
-                                (ES6+), and SCSS for building performant, modular interfaces.
+                                (ES6+), HTML5, accessibility and SCSS for building performant, modular interfaces.
                             </li>
                             <li className="skill">Full-Stack & Server-Side: Hands-on experience with Node.js, Express,
                                 MongoDB, Firestore, Redis, RESTful API design, and microservices architecture.
