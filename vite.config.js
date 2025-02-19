@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '/resume/', // Set the base URL to match your deployment route
   server: {
     proxy: {
       '/server': {
