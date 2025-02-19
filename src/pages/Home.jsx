@@ -45,10 +45,10 @@ function Home() {
                         <div className="my-accomplishments">
                             <ul>
                                 <li className="accomplishment">
-                                    Led cross-functional teams in building scalable, high-performance front-end architectures while championing best practices in development, accessibility, and UX. Regularly presented technical strategies and innovations to executives, driving alignment and adoption across the organization.
+                                    Led cross functional teams in building scalable, high-performance front-end architectures while championing best practices in development, accessibility, and UX. Regularly presented technical strategies and innovations to executives, driving alignment and adoption across the organization.
                                     </li>
                                 <li className="accomplishment">
-                                    Thrived in a fast-paced environment, delivering high-impact solutions under tight deadlines for investor and executive meetings. Successfully built and refined front-end systems under pressure, ensuring seamless presentations and strategic decision-making.
+                                    Thrived in a fast paced environment, delivering high impact solutions under tight deadlines for investor and executive meetings. Successfully built and refined front-end systems under pressure, ensuring seamless presentations and strategic decision-making.
                                 </li>
                                     <li className="accomplishment">
                                         Directed the creation of the Gravity Web Components Design System, delivering
