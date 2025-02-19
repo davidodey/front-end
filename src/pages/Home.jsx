@@ -70,8 +70,7 @@ function Home() {
                                         MongoDB, Redis, and Firebase, ensuring high performance and scalability.
                                     </li>
                                     <li className="accomplishment">
-                                        Mentored developers, championed best practices, and partnered with designers,
-                                        product managers, and stakeholders to align solutions with business objectives.
+                                        Provided 1:1 mentorship to teammates, offering guidance on architecture and engineering best practices. Collaborated closely with developers to troubleshoot challenges, optimize performance, and ensure scalable, maintainable solutions.
                                     </li>
                                 </ul>
                             </div>
