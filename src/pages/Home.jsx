@@ -45,7 +45,7 @@ function Home() {
                         <div className="my-accomplishments">
                             <ul>
                                 <li className="accomplishment">
-                                    Saving countless hours for the UX department, I led a team to design and develop Endeavor, an internal project management system. Built with MongoDB, Express.js, React.js, and Node.js, it streamlines sprint planning, DevOps, hosting, and design through third-party integrations, enabling 150 teammates to efficiently bootstrap, deploy, and manage projects.
+                                    I led a team to design and develop Endeavor, an internal project management system. Built with MongoDB, Express.js, React.js, and Node.js, it streamlines sprint planning, DevOps, hosting, and design through third-party integrations, enabling 150 teammates to efficiently bootstrap, deploy, and manage projects.
                                 </li>
                                 <li className="accomplishment">
                                     Boosted consistency and efficiency across Pearson’s digital ecosystem by leading the design and development of the Gravity Web Components Design System using vanilla JavaScript. We delivered reusable, accessible web components that could be implemented across various codebases, along with robust documentation.
@@ -176,8 +176,8 @@ function Home() {
                         <a href={"https://homeworkpilot.com/"}>https://homeworkpilot.com</a>
                     </div>
                     <div className="achievement">
-                        <h3 className="achievement-title">Endeavor</h3>
-                        <p>Oversaw Endeavor (PM platform): Designed and developed a project management platform with critical tool integrations for streamlined collaboration.</p>
+                        <h3 className="achievement-title">W3C CSS Working Group</h3>
+                        <p>Was honered to represent Pearson Education in 2017, getting valuable insight into the state of CSS and its future. </p>
                         <a href={"https://pearsonct.design/"}>https://pearsonct.design</a>
                     </div>
                 </section>
