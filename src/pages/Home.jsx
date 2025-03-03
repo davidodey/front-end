@@ -45,32 +45,25 @@ function Home() {
                         <div className="my-accomplishments">
                             <ul>
                                 <li className="accomplishment">
-                                    Led cross functional teams in building scalable, high-performance front-end architectures while championing best practices in development, accessibility, and UX. Regularly presented technical strategies and innovations to executives, driving alignment and adoption across the organization.
-                                    </li>
-                                <li className="accomplishment">
-                                    Thrived in a fast paced environment, delivering high impact solutions under tight deadlines for investor and executive meetings. Successfully built and refined front-end systems under pressure, ensuring seamless presentations and strategic decision-making.
+                                    Saving countless hours for the UX department, I led a team to design and develop Endeavor, an internal project management system. Built with MongoDB, Express.js, React.js, and Node.js, it streamlines sprint planning, DevOps, hosting, and design through third-party integrations, enabling 150 teammates to efficiently bootstrap, deploy, and manage projects.
                                 </li>
+                                <li className="accomplishment">
+                                    Boosted consistency and efficiency across Pearson’s digital ecosystem by leading the design and development of the Gravity Web Components Design System using vanilla JavaScript. We delivered reusable, accessible web components that could be implemented across various codebases, along with robust documentation.
+                                </li>
+                                <li className="accomplishment">
+                                    Supported the design and development of multiple design systems using figma as a reference to build pattern libraries, style guides, storybooks, and React.js components.
+                                </li>
+                                <li className="accomplishment">
+                                    Thrived in a fast paced environment by collaborating with designers and professors to deliver pixel perfect, high impact React.js web applications under tight deadlines for user testing, class testing, investor meetings, and executive meetings.
+                                </li>
+                                <li className="accomplishment">
+                                    Designed & implemented a backend EPUB to API conversion service, enabling rapid
+                                    prototyping for the Pearson+ platform and validating eTextbook workflows.
+                                </li>
+                                <li className="accomplishment">
+                                    Using the OpenAI API, I developed a custom chat interface designed to provide career suggestions to students and dynamically update various UI elements based on their responses.                                </li>
                                     <li className="accomplishment">
-                                        Directed the creation of the Gravity Web Components Design System, delivering
-                                        reusable, accessible web components that boosted consistency and efficiency
-                                        across
-                                        Pearson’s digital ecosystem.
-                                    </li>
-                                    <li className="accomplishment">
-                                        Designed & implemented a backend EPUB-to-API conversion service, enabling rapid
-                                        prototyping for the Pearson+ platform and validating eTextbook workflows.
-                                    </li>
-                                    <li className="accomplishment">
-                                        Architected & built the Endeavor project management platform (Figma, GitLab,
-                                        Azure, Digital Ocean
-                                        integrations), improving sprint planning and cross-functional collaboration.
-                                    </li>
-                                    <li className="accomplishment">
-                                        Delivered robust front-end and back-end solutions leveraging DigitalOcean, AWS,
-                                        MongoDB, Redis, and Firebase, ensuring high performance and scalability.
-                                    </li>
-                                    <li className="accomplishment">
-                                        Provided 1:1 mentorship to teammates, offering guidance on architecture and engineering best practices. Collaborated closely with developers to troubleshoot challenges, optimize performance, and ensure scalable, maintainable solutions.
+                                        Provided one on one mentorship and support to teammates, offering guidance on architecture and development, debugging and fixing issues, and suggesting best practices.
                                     </li>
                                 </ul>
                             </div>

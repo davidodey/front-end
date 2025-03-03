@@ -5,8 +5,7 @@ function Header () {
     return (
         <header>
             <h1>David O'Dey</h1>
-            <p className="job-title">UI Engineer | Building Scalable, User-Focused Solutions in Web, Mobile, and
-                Enterprise Platforms</p>
+            <p className="job-title">Creative Technologist | UI / UX Engineer | Web and Mobile Solutions Expert</p>
 
             <ul className="contact-info" aria-label="Contact Information">
                 <li>
