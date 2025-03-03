@@ -173,12 +173,17 @@ function Home() {
                         <h3 className="achievement-title">Homework Pilot: IOS</h3>
                         <p>AI/ML Enthusiast: Created and launched an AI-powered IOS homework app (Homework Pilot) to
                             simplify education for families.</p>
-                        <a href={"https://homeworkpilot.com/"}>https://homeworkpilot.com</a>
+                        <a href={"https://homeworkpilot.com/"}>Homework Pilot Website</a>
+                    </div>
+                    <div className="achievement">
+                        <h3 className="achievement-title">Pearson Plus</h3>
+                        <p>Played a pivotal role in guiding the design and user experience of Pearson's first DTC application. </p>
+                        <a href={"https://www.pearson.com/en-us/pearsonplus.html"}>Pearson Plus Website</a>
                     </div>
                     <div className="achievement">
                         <h3 className="achievement-title">W3C CSS Working Group</h3>
                         <p>Was honered to represent Pearson Education in 2017, getting valuable insight into the state of CSS and its future. </p>
-                        <a href={"https://pearsonct.design/"}>https://pearsonct.design</a>
+                        <a href={"https://www.w3.org/groups/wg/css/"}>W3C CSS Website</a>
                     </div>
                 </section>
                 <section className="skills">
