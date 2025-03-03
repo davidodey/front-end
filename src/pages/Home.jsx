@@ -51,7 +51,7 @@ function Home() {
                                     Boosted consistency and efficiency across Pearson’s digital ecosystem by leading the design and development of the Gravity Web Components Design System using vanilla JavaScript. We delivered reusable, accessible web components that could be implemented across various codebases, along with robust documentation.
                                 </li>
                                 <li className="accomplishment">
-                                    Supported the design and development of multiple design systems using figma as a reference to build pattern libraries, style guides, storybooks, and React.js components.
+                                    Continued Support for the design and development of multiple design systems using figma as a reference to build pattern libraries, style guides, storybooks, and React.js components.
                                 </li>
                                 <li className="accomplishment">
                                     Thrived in a fast paced environment by collaborating with designers and professors to deliver pixel perfect, high impact React.js web applications under tight deadlines for user testing, class testing, investor meetings, and executive meetings.
