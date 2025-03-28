@@ -1,11 +1,11 @@
 import React from "react";
-import {EmailIcon, GithubIcon, LocationIcon, PhoneIcon} from "./Icons.jsx";
+import {EmailIcon, GithubIcon, LocationIcon, PhoneIcon, WebsiteIcon} from "./Icons.jsx";
 
 function Header () {
     return (
         <header>
             <h1>David O'Dey</h1>
-            <p className="job-title">Creative Technologist | UI / UX Engineer | Web and Mobile Solutions Expert</p>
+            <p className="job-title">UI / UX Engineer | Creative Technologist | Web and Mobile Solutions Expert</p>
 
             <ul className="contact-info" aria-label="Contact Information">
                 <li>
@@ -29,16 +29,16 @@ function Header () {
                 </li>
 
                 <li>
-                    <span className="sr-only">GitHub:</span>
+                    <span className="sr-only">Website:</span>
                     <span className="contact-icon">
-              <GithubIcon/>
+              <WebsiteIcon/>
               <a
-                  href="https://github.com/davodey"
+                  href="https://davidodey.com"
                   className="github"
                   target="_blank"
                   rel="noopener noreferrer"
               >
-                github.com/davodey
+                https://davidodey.com
               </a>
             </span>
                 </li>
