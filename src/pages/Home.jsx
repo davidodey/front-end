@@ -24,9 +24,9 @@ function Home() {
                         <div className="company">
                             <div className="job-title">
                                 <div className={"flex"}>
-                                    {/*<div className={"logo"}>*/}
-                                    {/*    <PearsonLogo width={70} height={70}/>*/}
-                                    {/*</div>*/}
+                                    <div className={"logo"}>
+                                        <PearsonLogo width={70} height={70}/>
+                                    </div>
                                     <div className="company-icon">
                                         <h3>Lead Creative Technologist</h3>
                                         <div className="company-name">Pearson Education | Remote</div>
@@ -66,9 +66,9 @@ function Home() {
                         <div className="company">
                             <div className="job-title">
                                 <div className={"flex"}>
-                                    {/*<div className={"logo"}>*/}
-                                    {/*    <PearsonLogo width={70} height={70}/>*/}
-                                    {/*</div>*/}
+                                    <div className={"logo"}>
+                                        <PearsonLogo width={70} height={70}/>
+                                    </div>
                                     <div className="company-icon">
                                         <h3>Sr. Creative Technologist</h3>
                                         <div className="company-name">Pearson Education | Remote</div>
@@ -97,9 +97,9 @@ function Home() {
                         <div className="company">
                             <div className="job-title">
                                 <div className={"flex"}>
-                                    {/*<div className={"logo"}>*/}
-                                    {/*    <OReillyLogo width={70} height={70}/>*/}
-                                    {/*</div>*/}
+                                    <div className={"logo"}>
+                                        <OReillyLogo width={70} height={70}/>
+                                    </div>
                                     <div className="company-icon">
                                         <h3>UI / UX Engineer</h3>
                                         <div className="company-name">O'Reilly Automotive | Remote</div>
