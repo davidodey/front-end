@@ -14,7 +14,7 @@ function Home() {
                 <section className="summary">
                     <h2>Summary</h2>
                     <p>
-                        Seasoned UI/UX Engineer with 15+ years of experience delivering innovative, scalable digital experiences across web and mobile platforms. Expertise spans UI architecture, design systems, front-end engineering, and full-stack development. Proven ability to lead cross-functional teams, build accessible and performant applications, and drive alignment between design and engineering. Passionate about emerging technologies including AI/ML and real-time communication.                    </p>
+                        Seasoned UI/UX Engineer with 15+ years of experience delivering innovative, scalable digital experiences across web and mobile platforms. Expertise spans UI architecture, design systems, front end engineering, and full-stack development. Proven ability to lead cross-functional teams, build accessible and performant applications, and drive alignment between design and engineering. Passionate about emerging technologies including AI/ML and real time communication.                    </p>
                 </section>
                 <section className="skills">
                     <h2>Skills</h2>
@@ -23,7 +23,7 @@ function Home() {
                             <li className="skill"><strong>Frontend:</strong> JavaScript (ES6+), React, Web Components, HTML5, CSS/SCSS, Responsive Design, Accessibility (WCAG 2.1), Design Tokens</li>
                             <li className="skill"><strong>Backend:</strong> Node.js, Express, Firebase, MongoDB, REST APIs, Microservices</li>
                             <li className="skill"><strong>Tools & Systems:</strong> Git, Redux, AWS, Figma, CI/CD, Performance Optimization, Component Libraries, Design Systems</li>
-                            <li className="skill"><strong>Soft Skills:</strong> Agile Development, Cross-functional Collaboration, Team Mentorship, Product Alignment, User Testing</li>
+                            <li className="skill"><strong>Soft Skills:</strong> Agile Development, Cross functional Collaboration, Team Mentorship, Product Alignment, User Testing</li>
                         </ul>
                     </div>
                 </section>
@@ -37,7 +37,7 @@ function Home() {
                                         <PearsonLogo width={70} height={70}/>
                                     </div>
                                     <div className="company-icon">
-                                        <h3>Lead Creative Technologist</h3>
+                                        <h3>Lead Front End Engineer (Creative Technologist)</h3>
                                         <div className="company-name">Pearson Education | Remote</div>
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@ function Home() {
                                         <PearsonLogo width={70} height={70}/>
                                     </div>
                                     <div className="company-icon">
-                                        <h3>Sr. Creative Technologist</h3>
+                                        <h3>Sr. Front End Engineer (Creative Technologist)</h3>
                                         <div className="company-name">Pearson Education | Remote</div>
                                     </div>
                                 </div>
@@ -144,8 +144,10 @@ function Home() {
                     <h2>Achievements</h2>
                     <div className="achievement">
                         <h3 className="achievement-title">Pearson Plus</h3>
-                        <p>Played a pivotal role in guiding the design and user experience of Pearson's first DTC application. </p>
-                        <a href={"https://www.pearson.com/en-us/pearsonplus.html"}>Pearson Plus Website</a>
+                        <p>
+                            Led front end strategy and UX implementation for Pearson’s first direct to consumer (DTC) learning platform. Collaborated over 2 years with Product, UX, and Engineering teams to deliver a scalable React-based application with integrated design system components.
+                        </p>
+                        <a href="https://www.pearson.com/en-us/pearsonplus.html">Pearson Plus Website</a>
                     </div>
                     <div className="achievement">
                         <h3 className="achievement-title">W3C CSS Working Group</h3>
@@ -159,17 +161,22 @@ function Home() {
                     <h2>Strengths</h2>
                     <div className="strength-type">
                         <div className="strength-title">
-                            Innovation and Future Focused Thinking: Skilled in integrating emerging technologies such as AI, machine learning, RESTful APIs and real time communication to deliver forward looking products that anticipate market needs
+                            Rapid Execution & Continuous Learning: Recognized for producing clean, efficient code under pressure. Quickly absorbs new tools and frameworks, enabling rapid onboarding and reducing time-to-impact on high-stakes projects.
                         </div>
                     </div>
                     <div className="strength-type">
                         <div className="strength-title">
-                            Strategic Problem Solving: Skilled at diagnosing complex technical challenges and delivering scalable efficient solutions that drive measurable business outcomes
+                            Innovation & Future-Focused Thinking: Adept at identifying and integrating emerging technologies—including AI, machine learning, and real-time systems—to create products that anticipate user needs and market shifts.
                         </div>
                     </div>
                     <div className="strength-type">
                         <div className="strength-title">
-                            Leadership and Team Building: Proven track record of mentoring developers, fostering collaboration and guiding cross functional teams toward shared objectives
+                            Strategic Problem Solving: Known for untangling complex design and engineering challenges and crafting solutions that are both technically sound and aligned with product strategy, ensuring long-term system integrity and performance.
+                        </div>
+                    </div>
+                    <div className="strength-type">
+                        <div className="strength-title">
+                            Leadership & Team Development: Builds strong engineering culture through mentorship, hands-on guidance, and cross-disciplinary collaboration. Drives accountability and knowledge sharing to elevate team capability.
                         </div>
                     </div>
                 </section>
@@ -183,8 +190,7 @@ function Home() {
                             </h3>
 
                         </div>
-                        <div className="school-tenure">2003 to 2005</div>
-                        <div className="degree-pursued">Web Management</div>
+                        <div className="degree-pursued">2003 to 2005 - Web Management</div>
                         <div className="school-location">Tempe, AZ</div>
 
                     </div>
@@ -195,8 +201,7 @@ function Home() {
                             </h3>
 
                         </div>
-                        <div className="school-tenure">2001 to 2003</div>
-                        <div className="degree-pursued">Associates - Computer Networking</div>
+                        <div className="degree-pursued">2001 to 2003 - Associates Computer Networking</div>
                         <div className="school-location">Burr Ridge, IL</div>
                     </div>
                     <div className="school">
@@ -206,8 +211,7 @@ function Home() {
                             </h3>
 
                         </div>
-                        <div className="school-tenure">1999 to 2001</div>
-                        <div className="degree-pursued">General - Credit Transfer</div>
+                        <div className="degree-pursued">1999 to 2001 General - Credit Transfer</div>
                         <div className="school-location">Wheaton, IL</div>
                     </div>
                 </section>

@@ -45,7 +45,7 @@ header .job-title {
 }
 
 .contact-info {
-    display: none;
+    display:flex;
     flex-direction: row;
     padding-left: 0;
 }
@@ -55,6 +55,7 @@ header .job-title {
     line-height: 1.5;
     display: flex;
     align-items: center;
+    margin-right:10px;
 }
 
 a {
@@ -411,7 +412,7 @@ li {
         margin-top: 20px;
     }
     .contact-info li {
-        font-size: 21px;
+        font-size: 16px;
     }
     a {
         margin-left: 8px;
@@ -471,6 +472,9 @@ li {
     }
     .accomplishment {
        margin-left: 25px;
+    }
+    svg {
+        display:none;
     }
 
 }
