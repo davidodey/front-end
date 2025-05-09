@@ -31,9 +31,13 @@ header .job-title {
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--accent-color);
-    margin-bottom: 2rem;
+    /*margin-bottom: 2rem;*/
 }
 
+.school-tenure {
+    min-width:130px;
+    font-size:16px;
+}
 .job-title, .school-info {
     display: flex;
     align-items: center;
@@ -41,9 +45,8 @@ header .job-title {
 }
 
 .contact-info {
-    display: flex;
+    display: none;
     flex-direction: row;
-    gap: 1.2rem;
     padding-left: 0;
 }
 
@@ -135,8 +138,7 @@ li {
 }
 
 .references {
-    padding: 1.8rem;
-    border-radius: 0.8rem;
+    display:none;
 }
 
 .references h2 {
@@ -160,12 +162,14 @@ li {
     color: var(--text-color);
 }
 
+
 .reference-info {
     font-size: 1.1rem;
     color: var(--muted-color);
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
+    margin-top:-10px;
 }
 
 .reference-info a,
@@ -443,6 +447,7 @@ li {
     .references {
         padding: 12px;
         border-radius: 12px;
+        display:block !important;
     }
     .references h2 {
         font-size: 32px;
@@ -458,4 +463,14 @@ li {
     .reference-info {
         font-size: 18px;
     }
+    .logo {
+        display: none;
+    }
+    .company-name {
+        margin-top:-10px;
+    }
+    .accomplishment {
+       margin-left: 25px;
+    }
+
 }
